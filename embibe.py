@@ -32,15 +32,15 @@ st.markdown("- **Lack of Actionable Insights for Teachers and Parents:** Teacher
 
 st.subheader("Supporting Data")
 data = {"Metric": ["Students feeling disconnected", "Improvement in retention with personalization", "Improvement in parent/teacher engagement"],
-        "Percentage": ["84", "30", "40"]}
+        "Percentage": [84, 30, 40]}
 df = pd.DataFrame(data)
 st.table(df)
 st.bar_chart(df.set_index('Percentage')['Metric'])
 
 st.header("Visualization: Top 10 Cryptocurrencies")
 data = {
-    "Cryptocurrency": ["Bitcoin", "Ethereum", "Tether", "BNB", "XRP", "Cardano", "Solana", "Dogecoin", "Polygon", "Litecoin"],
-    "Market Cap (in Billion $)": [900, 450, 83, 65, 60, 45, 40, 20, 18, 10]
+    "Metric": ["Students feeling disconnected", "Improvement in retention with personalization", "Improvement in parent/teacher engagement"],
+    "Percentage": [900, 450, 83]
 }
 df_crypto = pd.DataFrame(data)
 st.bar_chart(df_crypto.set_index("Cryptocurrency"))

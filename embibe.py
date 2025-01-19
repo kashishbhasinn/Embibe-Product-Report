@@ -8,16 +8,23 @@ SECONDARY_COLOR = "#367CD7"  # R-54, G-124, B-215
 TERTIARY_COLOR = "#72F4BD"  # R-114, G-244, B-189
 BACKGROUND_COLOR = "#FCFCFC"  # R-252, G-252, B-252
 
-# Page Configuration
-st.set_page_config(page_title="Embibe AI-Powered Learning Platform", layout="wide", page_icon=":books:")
-st.markdown(f"<style>body {{ background-color: {BACKGROUND_COLOR}; }}</style>", unsafe_allow_html=True)
-
 # Header Section
-st.title("AI-Powered Personalized Learning Platform for Embibe")
-st.markdown(f"<h3 style='color:{PRIMARY_COLOR};'>Revolutionizing Education Through Personalization</h3>", unsafe_allow_html=True)
+
+st.markdown("<h1 style='color: {PRIMARY_COLOR}; text-align: center;'>🤖 A CASE STUDY ON EMBIBE 🤖</h1>", unsafe_allow_html=True)
+st.markdown(f"<h2 style='color:{SECONDARY_COLOR};'Revolutionizing Education Through Personalization</h2>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #888;'>Your AI assistant is here to help you! 🚀</p>", unsafe_allow_html=True)
+
+# Sidebar setup
+st.sidebar.header("**A Product Case Study by Kashish Bhasin**")
+st.sidebar.header("Contact Information", divider='rainbow')
+st.sidebar.write("Feel free to reach out through the following")
+st.sidebar.write("[LinkedIn](linkedin.com/in/kashish-bhasin)")
+st.sidebar.write("[GitHub](https://github.com/kashishbhasinn)")
+st.sidebar.write("[Email](mailto:kashishbhasinn@gmail.com)")
+st.sidebar.write("Developed by Kashish Bhasin", unsafe_allow_html=True)
 
 # Challenge Section
-st.header("Challenge")
+st.markdown("<h2 style='color:{TERTIARY_COLOR}; 'text-align: center;'>Challenge</h2>", unsafe_allow_html=True)
 st.write("Many school students struggle with standardized teaching approaches, which fail to address individual learning speeds, knowledge gaps, and unique preferences. Teachers and parents lack actionable insights to help these students succeed, resulting in disengagement and missed growth opportunities.")
 
 st.subheader("Supporting Data")

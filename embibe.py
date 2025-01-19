@@ -38,11 +38,11 @@ st.table(df)
 st.bar_chart(df.set_index('Percentage')['Metric'])
 
 st.header("Visualization: Top 10 Cryptocurrencies")
-data = {
+data1 = {
     "Metric": ["Students feeling disconnected", "Improvement in retention with personalization", "Improvement in parent/teacher engagement"],
     "Percentage": [900, 450, 83]
 }
-df_crypto = pd.DataFrame(data)
+df_crypto = pd.DataFrame(data1)
 st.bar_chart(df_crypto.set_index("Cryptocurrency"))
 
 # User Pain Points Section

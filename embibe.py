@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
 import pandas as pd
+import altair as alt
 
 # Custom Colors
 PRIMARY_COLOR = "#0305DE"  # R-3, G-5, B-222
@@ -37,6 +38,37 @@ data1 = {
 }
 dframe = pd.DataFrame(data1)
 st.bar_chart(dframe.set_index("Metric"))
+
+
+
+
+
+###
+st.subheader("Supporting Data")
+data1 = {
+    "Metric": ["Students feeling disconnected", 
+               "Improvement in retention with personalization", 
+               "Improvement in parent/teacher engagement"],
+    "Percentage": [84, 30, 40]
+}
+dframe = pd.DataFrame(data1)
+
+# Display table
+st.table(dframe)
+
+# Create bar chart using Altair
+chart = alt.Chart(dframe).mark_bar(color=PRIMARY_COLOR).encode(
+    x=alt.X("Metric", sort=None, axis=alt.Axis(title="Metrics", labelAngle=-45)),  # X-axis
+    y=alt.Y("Percentage", axis=alt.Axis(title="Percentage")),  # Y-axis
+    tooltip=["Metric", "Percentage"]  # Tooltip for interactivity
+).properties(
+    width=600,
+    height=400,
+    title="Supporting Data Visualization"
+)
+
+# Render the chart
+st.altair_chart(chart, use_container_width=True)
 
 # User Pain Points Section
 st.header("User Pain Points")

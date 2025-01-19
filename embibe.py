@@ -24,6 +24,16 @@ st.sidebar.write("[Email](mailto:kashishbhasinn@gmail.com)")
 st.sidebar.write("Developed by Kashish Bhasin", unsafe_allow_html=True)
 
 
+st.markdown("""
+    <style>
+    .css-1d391kg {
+        background-color: lightblue; /* Change this color */
+        color: black; /* Text color */
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# Text box with pre-filled text
 textbox = st.text_area("Enter your text here", "This is some pre-filled text.")
 
 # Display the entered text

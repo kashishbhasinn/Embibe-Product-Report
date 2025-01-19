@@ -31,20 +31,8 @@ st.markdown("- **Individual Learning Speeds and Preferences:** Every student lea
 st.markdown("- **Knowledge Gaps:** Standardized methods don’t always focus on addressing knowledge gaps that students might have accumulated over time. These gaps can widen over the years, making it harder for students to keep up with the curriculum. Research by the National Center for Education Statistics (NCES) shows that students with significant knowledge gaps are at a higher risk of falling behind, which leads to disengagement (NCES, 2018).")
 st.markdown("- **Lack of Actionable Insights for Teachers and Parents:** Teachers often struggle to identify where each student needs improvement, especially when working with large classes. As a result, they may not be able to provide tailored support. Similarly, parents often lack the necessary data to understand how their child is progressing in school or how they can offer support at home. According to a report by EdTech Digest, tools that provide real-time data and insights on student performance can improve teacher-parent communication and help provide actionable strategies to address specific student needs.")
 
-st.subheader("Supporting Data")
-data1 = {
-    "Metric": ["Students feeling disconnected", "Improvement in retention with personalization", "Improvement in parent/teacher engagement"],
-    "Percentage (in Percentage $)": [84, 30, 40]
-}
-dframe = pd.DataFrame(data1)
-st.bar_chart(dframe.set_index("Metric"))
-
-
-
-
-
-###
-st.subheader("Supporting Data")
+#Supporting Data Section
+st.markdown(f"<h3 style='color:{TERTIARY_COLOR}; text-align: center;'>Supporting Dat</h3>", unsafe_allow_html=True)
 data1 = {
     "Metric": ["Students feeling disconnected", 
                "Improvement in retention with personalization", 
@@ -52,11 +40,7 @@ data1 = {
     "Percentage": [84, 30, 40]
 }
 dframe = pd.DataFrame(data1)
-
-# Display table
 st.table(dframe)
-
-# Create bar chart using Altair
 chart = alt.Chart(dframe).mark_bar(color=PRIMARY_COLOR).encode(
     x=alt.X("Metric", sort=None, axis=alt.Axis(title="Metrics", labelAngle=-45)),  # X-axis
     y=alt.Y("Percentage", axis=alt.Axis(title="Percentage")),  # Y-axis
@@ -66,8 +50,6 @@ chart = alt.Chart(dframe).mark_bar(color=PRIMARY_COLOR).encode(
     height=400,
     title="Supporting Data Visualization"
 )
-
-# Render the chart
 st.altair_chart(chart, use_container_width=True)
 
 # User Pain Points Section

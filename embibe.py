@@ -35,11 +35,6 @@ data = {"Metric": ["Students feeling disconnected", "Improvement in retention wi
         "Percentage": ["84%", "30%", "40%"]}
 df = pd.DataFrame(data)
 st.table(df)
-fig, ax = plt.subplots()
-ax.pie(df["Percentage"], labels=df["Metric"], autopct='%1.1f%%', startangle=90, colors=['#ff9999','#66b3ff','#99ff99'])
-ax.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-st.subheader("Supporting Data - Pie Chart")
-st.pyplot(fig)
 
 # User Pain Points Section
 st.header("User Pain Points")

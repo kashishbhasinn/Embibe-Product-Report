@@ -26,13 +26,13 @@ st.sidebar.write("Developed by Kashish Bhasin", unsafe_allow_html=True)
 
 
 # Challenge Section
-st.markdown(f"<h3 style='color:{TERTIARY_COLOR}; text-align: center;'>Challenge</h3>", unsafe_allow_html=True)
+st.markdown(f"<h3 style='color:{TERTIARY_COLOR}; text-align: center;'>Challenges</h3>", unsafe_allow_html=True)
 st.markdown("- **Individual Learning Speeds and Preferences:** Every student learns at a different pace, and standardized teaching methods don’t account for these variations. For example, while some students may grasp a concept quickly, others may need additional time and different explanations to fully understand. A study by the Bill & Melinda Gates Foundation in 2013 highlighted that personalized learning approaches, which allow for flexibility in pace, lead to better academic outcomes, suggesting that the lack of personalized learning models in traditional classrooms contributes to disengagement and poor performance")
 st.markdown("- **Knowledge Gaps:** Standardized methods don’t always focus on addressing knowledge gaps that students might have accumulated over time. These gaps can widen over the years, making it harder for students to keep up with the curriculum. Research by the National Center for Education Statistics (NCES) shows that students with significant knowledge gaps are at a higher risk of falling behind, which leads to disengagement (NCES, 2018).")
 st.markdown("- **Lack of Actionable Insights for Teachers and Parents:** Teachers often struggle to identify where each student needs improvement, especially when working with large classes. As a result, they may not be able to provide tailored support. Similarly, parents often lack the necessary data to understand how their child is progressing in school or how they can offer support at home. According to a report by EdTech Digest, tools that provide real-time data and insights on student performance can improve teacher-parent communication and help provide actionable strategies to address specific student needs.")
 
 #Supporting Data Section
-st.markdown(f"<h3 style='color:{TERTIARY_COLOR}; text-align: center;'>Supporting Dat</h3>", unsafe_allow_html=True)
+st.markdown(f"<h3 style='color:{TERTIARY_COLOR}; text-align: center;'>Supporting Data</h3>", unsafe_allow_html=True)
 data1 = {
     "Metric": ["Students feeling disconnected", 
                "Improvement in retention with personalization", 
@@ -53,7 +53,7 @@ chart = alt.Chart(dframe).mark_bar(color=PRIMARY_COLOR).encode(
 st.altair_chart(chart, use_container_width=True)
 
 # User Pain Points Section
-st.header("User Pain Points")
+st.markdown(f"<h3 style='color:{TERTIARY_COLOR}; text-align: center;'>User Pain Points</h3>", unsafe_allow_html=True)
 st.markdown("### Students")
 st.write("Struggle to keep up with a one-size-fits-all approach, lack feedback on weak areas and progress over time.")
 
@@ -64,7 +64,7 @@ st.markdown("### Parents")
 st.write("Limited visibility into their child’s progress and uncertainty about how to support their education.")
 
 # Potential Solutions Section
-st.header("Potential Solutions")
+st.markdown(f"<h3 style='color:{TERTIARY_COLOR}; text-align: center;'>Potential Solutions</h3>", unsafe_allow_html=True)
 solutions = {
     "Solution": ["AI-Powered Personalized Platform", "Engaging Visual Learning Tools", "Data-Driven Dashboards"],
     "Pros": ["Improves engagement and learning outcomes.", "Increases student interest and retention.", "Provides transparency and improves collaboration."],
@@ -74,7 +74,7 @@ solutions_df = pd.DataFrame(solutions)
 st.table(solutions_df)
 
 # Metrics and Testing Section
-st.header("Metrics and Testing")
+st.markdown(f"<h3 style='color:{TERTIARY_COLOR}; text-align: center;'>Metrics and Testing</h3>", unsafe_allow_html=True)
 st.write("To measure the platform's success, the following metrics will be used:")
 st.markdown("- **Student Performance:** Improvement in test scores (Target: +15% within 3 months)")
 st.markdown("- **Engagement:** Daily active usage time (Target: 20 minutes per session)")
@@ -82,7 +82,7 @@ st.markdown("- **Retention:** User retention after 3 months (Target: 80%)")
 st.markdown("- **Teacher/Parent Satisfaction:** Feedback score (Target: 4.5+/5)")
 
 # Product Roadmap Section
-st.header("Product Roadmap")
+st.markdown(f"<h3 style='color:{TERTIARY_COLOR}; text-align: center;'>Product Roadmap</h3>", unsafe_allow_html=True)
 st.markdown("### Phase 1: MVP Development (Month 1-3)")
 st.write("Build adaptive learning features, teacher dashboards, and initial gamification.")
 
@@ -93,7 +93,7 @@ st.markdown("### Phase 3: Scale and Optimize (Month 7-12)")
 st.write("Expand to more schools, enhance analytics, and improve scalability.")
 
 # Launch Plan Section
-st.header("Launch Plan")
+st.markdown(f"<h3 style='color:{TERTIARY_COLOR}; text-align: center;'>Launch Plan</h3>", unsafe_allow_html=True)
 st.markdown("### Pre-Launch (Month 1-6)")
 st.write("Conduct user research, build marketing campaigns, and prepare onboarding materials.")
 
@@ -113,7 +113,7 @@ df_crypto = pd.DataFrame(data)
 st.bar_chart(df_crypto.set_index("Cryptocurrency"))
 
 # Long-Term Evolution Section
-st.header("Long-Term Evolution")
+st.markdown(f"<h3 style='color:{TERTIARY_COLOR}; text-align: center;'>Long-Term Evolution</h3>", unsafe_allow_html=True)
 st.write("In the long term, the platform will evolve by enhancing AI models for predictive analytics, expanding globally with curriculum customization, and integrating with the broader EdTech ecosystem.")
 
 # Footer

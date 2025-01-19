@@ -10,9 +10,9 @@ BACKGROUND_COLOR = "#FCFCFC"  # R-252, G-252, B-252
 
 # Header Section
 
-st.markdown(f"<h1 style='color: {PRIMARY_COLOR}; text-align: center;'>🤖 A CASE STUDY ON EMBIBE 🤖</h1>", unsafe_allow_html=True)
+st.markdown(f"<h1 style='color: {PRIMARY_COLOR}; text-align: center;'>A CASE STUDY ON EMBIBE</h1>", unsafe_allow_html=True)
 st.markdown(f"<h2 style='color:{SECONDARY_COLOR}; text-align: center;'>Revolutionizing Education Through Personalization</h2>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: #888;'>Your AI assistant is here to help you! 🚀</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #888;'>Task: You are tasked with creating an AI-powered personalized learning platform for school students. The platform should adapt to each student’s learning pace, preferences, and knowledge gaps while providing actionable insights to teachers and parents</p>", unsafe_allow_html=True)
 
 # Sidebar setup
 st.sidebar.header("**A Product Case Study**")
@@ -24,7 +24,7 @@ st.sidebar.write("[Email](mailto:kashishbhasinn@gmail.com)")
 st.sidebar.write("Developed by Kashish Bhasin", unsafe_allow_html=True)
 
 # Challenge Section
-st.markdown(f"<h2 style='color:{TERTIARY_COLOR}; text-align: center;'>Challenge</h2>", unsafe_allow_html=True)
+st.markdown(f"<h3 style='color:{TERTIARY_COLOR}; text-align: center;'>Challenge</h3>", unsafe_allow_html=True)
 st.write("Many school students struggle with standardized teaching approaches, which fail to address individual learning speeds, knowledge gaps, and unique preferences. Teachers and parents lack actionable insights to help these students succeed, resulting in disengagement and missed growth opportunities.")
 
 st.subheader("Supporting Data")

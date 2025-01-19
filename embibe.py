@@ -25,6 +25,7 @@ st.sidebar.write("Developed by Kashish Bhasin", unsafe_allow_html=True)
 
 # Challenge Section
 st.markdown(f"<h3 style='color:{TERTIARY_COLOR}; text-align: center;'>Challenge</h3>", unsafe_allow_html=True)
+st.markdown("- **Individual Learning Speeds and Preferences:** Every student learns at a different pace, and standardized teaching methods don’t account for these variations. For example, while some students may grasp a concept quickly, others may need additional time and different explanations to fully understand. A study by the Bill & Melinda Gates Foundation in 2013 highlighted that personalized learning approaches, which allow for flexibility in pace, lead to better academic outcomes, suggesting that the lack of personalized learning models in traditional classrooms contributes to disengagement and poor performance")
 st.write("Many school students struggle with standardized teaching approaches, which fail to address individual learning speeds, knowledge gaps, and unique preferences. Teachers and parents lack actionable insights to help these students succeed, resulting in disengagement and missed growth opportunities.")
 
 st.subheader("Supporting Data")

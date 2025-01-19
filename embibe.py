@@ -24,22 +24,6 @@ st.sidebar.write("[Email](mailto:kashishbhasinn@gmail.com)")
 st.sidebar.write("Developed by Kashish Bhasin", unsafe_allow_html=True)
 
 
-st.markdown("""
-    <style>
-    .css-1d391kg {
-        background-color: lightblue; /* Change this color */
-        color: black; /* Text color */
-    }
-    </style>
-""", unsafe_allow_html=True)
-
-# Text box with pre-filled text
-textbox = st.text_area("Enter your text here", "This is some pre-filled text.")
-
-# Display the entered text
-st.write("You entered:", textbox)
-
-
 # Challenge Section
 st.markdown(f"<h3 style='color:{TERTIARY_COLOR}; text-align: center;'>Challenge</h3>", unsafe_allow_html=True)
 st.markdown("- **Individual Learning Speeds and Preferences:** Every student learns at a different pace, and standardized teaching methods don’t account for these variations. For example, while some students may grasp a concept quickly, others may need additional time and different explanations to fully understand. A study by the Bill & Melinda Gates Foundation in 2013 highlighted that personalized learning approaches, which allow for flexibility in pace, lead to better academic outcomes, suggesting that the lack of personalized learning models in traditional classrooms contributes to disengagement and poor performance")

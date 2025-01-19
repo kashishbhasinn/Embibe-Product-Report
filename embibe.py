@@ -35,7 +35,7 @@ data = {"Metric": ["Students feeling disconnected", "Improvement in retention wi
         "Percentage": [84, 30, 40]}
 df = pd.DataFrame(data)
 st.table(df)
-st.bar_chart(df.set_index('Percentage')['Metric'])
+st.bar_chart(df.set_index["Metric"])
 
 st.header("Visualization: Top 10 Cryptocurrencies")
 data1 = {
@@ -43,7 +43,7 @@ data1 = {
     "Percentage": [900, 450, 83]
 }
 df_crypto = pd.DataFrame(data1)
-st.bar_chart(df_crypto.set_index("Cryptocurrency"))
+st.bar_chart(df_crypto.set_index("Metric"))
 
 # User Pain Points Section
 st.header("User Pain Points")

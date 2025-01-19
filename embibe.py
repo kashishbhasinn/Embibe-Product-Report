@@ -10,7 +10,7 @@ BACKGROUND_COLOR = "#FCFCFC"  # R-252, G-252, B-252
 
 # Header Section
 
-st.markdown("<h1 style='color: {PRIMARY_COLOR}; text-align: center;'>🤖 A CASE STUDY ON EMBIBE 🤖</h1>", unsafe_allow_html=True)
+st.markdown(f"<h1 style='color: {PRIMARY_COLOR}; text-align: center;'>🤖 A CASE STUDY ON EMBIBE 🤖</h1>", unsafe_allow_html=True)
 st.markdown(f"<h2 style='color:{SECONDARY_COLOR};'>Revolutionizing Education Through Personalization</h2>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center; color: #888;'>Your AI assistant is here to help you! 🚀</p>", unsafe_allow_html=True)
 

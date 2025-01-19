@@ -31,11 +31,12 @@ st.markdown("- **Knowledge Gaps:** Standardized methods don’t always focus on 
 st.markdown("- **Lack of Actionable Insights for Teachers and Parents:** Teachers often struggle to identify where each student needs improvement, especially when working with large classes. As a result, they may not be able to provide tailored support. Similarly, parents often lack the necessary data to understand how their child is progressing in school or how they can offer support at home. According to a report by EdTech Digest, tools that provide real-time data and insights on student performance can improve teacher-parent communication and help provide actionable strategies to address specific student needs.")
 
 st.subheader("Supporting Data")
-data = {"Metric": ["Students feeling disconnected", "Improvement in retention with personalization", "Improvement in parent/teacher engagement"],
-        "Percentage": [84, 30, 40]}
-df = pd.DataFrame(data)
-st.table(df)
-st.bar_chart(df.set_index["Metric"])
+data1 = {
+    "Metric": ["Students feeling disconnected", "Improvement in retention with personalization", "Improvement in parent/teacher engagement"],
+    "Percentage (in Percentage $)": [84, 30, 40]
+}
+dframe = pd.DataFrame(data1)
+st.bar_chart(dframe.set_index("Metric"))
 
 # User Pain Points Section
 st.header("User Pain Points")

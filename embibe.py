@@ -35,6 +35,7 @@ data = {"Metric": ["Students feeling disconnected", "Improvement in retention wi
         "Percentage": ["84%", "30%", "40%"]}
 df = pd.DataFrame(data)
 st.table(df)
+st.bar_chart(df.set_index('Metric')['Percentage'])
 
 # User Pain Points Section
 st.header("User Pain Points")

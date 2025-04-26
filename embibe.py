@@ -1,120 +1,216 @@
 import streamlit as st
-from PIL import Image
-import pandas as pd
-import altair as alt
+import base64
 
-# Custom Colors
-PRIMARY_COLOR = "#0305DE"  # R-3, G-5, B-222
-SECONDARY_COLOR = "#367CD7"  # R-54, G-124, B-215
-TERTIARY_COLOR = "#72F4BD"  # R-114, G-244, B-189
-BACKGROUND_COLOR = "#FCFCFC"  # R-252, G-252, B-252
-
-# Header Section
-
-st.markdown(f"<h1 style='color: {PRIMARY_COLOR}; text-align: center;'>A CASE STUDY ON EMBIBE</h1>", unsafe_allow_html=True)
-st.markdown(f"<h2 style='color:{SECONDARY_COLOR}; text-align: center;'>Revolutionizing Education Through Personalization</h2>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: #888;'>Task: You are tasked with creating an AI-powered personalized learning platform for school students. The platform should adapt to each student’s learning pace, preferences, and knowledge gaps while providing actionable insights to teachers and parents</p>", unsafe_allow_html=True)
-
-# Sidebar setup
-st.sidebar.header("**A Product Case Study**")
-st.sidebar.header("Contact Information", divider='rainbow')
-st.sidebar.write("Feel free to reach out through the following")
-st.sidebar.write("[LinkedIn](linkedin.com/in/kashish-bhasin)")
-st.sidebar.write("[GitHub](https://github.com/kashishbhasinn)")
-st.sidebar.write("[Email](mailto:kashishbhasinn@gmail.com)")
-st.sidebar.write("Developed by Kashish Bhasin", unsafe_allow_html=True)
-
-
-# Challenge Section
-st.markdown(f"<h3 style='color:{TERTIARY_COLOR}; text-align: center;'>Challenges</h3>", unsafe_allow_html=True)
-st.markdown("- **Individual Learning Speeds and Preferences:** Every student learns at a different pace, and standardized teaching methods don’t account for these variations. For example, while some students may grasp a concept quickly, others may need additional time and different explanations to fully understand. A study by the Bill & Melinda Gates Foundation in 2013 highlighted that personalized learning approaches, which allow for flexibility in pace, lead to better academic outcomes, suggesting that the lack of personalized learning models in traditional classrooms contributes to disengagement and poor performance")
-st.markdown("- **Knowledge Gaps:** Standardized methods don’t always focus on addressing knowledge gaps that students might have accumulated over time. These gaps can widen over the years, making it harder for students to keep up with the curriculum. Research by the National Center for Education Statistics (NCES) shows that students with significant knowledge gaps are at a higher risk of falling behind, which leads to disengagement (NCES, 2018).")
-st.markdown("- **Lack of Actionable Insights for Teachers and Parents:** Teachers often struggle to identify where each student needs improvement, especially when working with large classes. As a result, they may not be able to provide tailored support. Similarly, parents often lack the necessary data to understand how their child is progressing in school or how they can offer support at home. According to a report by EdTech Digest, tools that provide real-time data and insights on student performance can improve teacher-parent communication and help provide actionable strategies to address specific student needs.")
-
-#Supporting Data Section
-st.markdown(f"<h3 style='color:{TERTIARY_COLOR}; text-align: center;'>Supporting Data</h3>", unsafe_allow_html=True)
-data1 = {
-    "Metric": ["Students feeling disconnected", 
-               "Improvement in retention with personalization", 
-               "Improvement in parent/teacher engagement"],
-    "Percentage": [84, 30, 40]
-}
-dframe = pd.DataFrame(data1)
-st.table(dframe)
-chart = alt.Chart(dframe).mark_bar(color=PRIMARY_COLOR).encode(
-    x=alt.X("Metric", sort=None, axis=alt.Axis(title="Metrics", labelAngle=-45)),  # X-axis
-    y=alt.Y("Percentage", axis=alt.Axis(title="Percentage")),  # Y-axis
-    tooltip=["Metric", "Percentage"]  # Tooltip for interactivity
-).properties(
-    width=600,
-    height=400,
-    title="Supporting Data Visualization"
+# Set page config for a cleaner look
+st.set_page_config(
+    page_title="Kashish Bhasin | District by Zomato",
+    page_icon="👔",
+    layout="wide"
 )
-st.altair_chart(chart, use_container_width=True)
 
-# User Pain Points Section
-st.markdown(f"<h3 style='color:{TERTIARY_COLOR}; text-align: center;'>User Pain Points</h3>", unsafe_allow_html=True)
-st.markdown("### Students")
-st.write("Struggle to keep up with a one-size-fits-all approach, lack feedback on weak areas and progress over time.")
+# Custom CSS for styling
+st.markdown("""
+<style>
+    .main {
+        background-color: #f8f8f8;
+        padding: 0;
+    }
+    .stApp {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .header-container {
+        background-color: #E23744;
+        color: white;
+        padding: 2rem 1.5rem;
+        border-radius: 0 0 20px 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .section-card {
+        background-color: white;
+        border-radius: 15px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    }
+    .cta-footer {
+        background-color: #1A1A1A;
+        color: white;
+        padding: 15px;
+        border-radius: 15px;
+        text-align: center;
+        margin-top: 20px;
+        font-style: italic;
+    }
+    .btn-download {
+        background-color: #E23744;
+        color: white;
+        padding: 10px 25px;
+        border-radius: 30px;
+        border: none;
+        font-weight: 600;
+        margin-right: 10px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+    }
+    .btn-contact {
+        background-color: #1A1A1A;
+        color: white;
+        padding: 10px 25px;
+        border-radius: 30px;
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+    }
+    h1 {
+        margin: 0;
+        font-size: 2.2rem;
+    }
+    .subtext {
+        font-size: 1rem;
+        opacity: 0.85;
+        margin-top: 5px;
+    }
+    h3 {
+        color: #000000;
+        border-bottom: 2px solid #f2f2f2;
+        padding-bottom: 8px;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+    .section-heading {
+        color: #000000;
+        font-size: 1.5rem;
+        font-weight: 700;
+        border-bottom: 2px solid #f2f2f2;
+        padding-bottom: 8px;
+        margin-bottom: 15px;
+    }
+    .skill-tag {
+        background-color: #f2f2f2;
+        color: #000000;
+        padding: 5px 12px;
+        border-radius: 20px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        display: inline-block;
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
+    .skills-title {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-weight: 600;
+        color: #000000;
+    }
+    .achievement {
+        border-left: 3px solid #E23744;
+        padding-left: 15px;
+        margin-bottom: 15px;
+    }
+    .achievement-title {
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #000000;
+    }
+    .achievement-detail {
+        font-size: 0.9rem;
+        color: #000000;
+    }
+</style>
+""", unsafe_allow_html=True)
 
-st.markdown("### Teachers")
-st.write("Difficulty identifying students' needs and providing personalized guidance.")
+# Header section
+st.markdown("""
+<div class="header-container">
+    <h1>Hi, I'm Kashish Bhasin</h1>
+    <p class="subtext">Product + Tech Enthusiast applying to build the Fashion Vertical at District by Zomato</p>
+</div>
+""", unsafe_allow_html=True)
 
-st.markdown("### Parents")
-st.write("Limited visibility into their child’s progress and uncertainty about how to support their education.")
+# Main content in columns for responsive design
+col1, col2 = st.columns([3, 2])
 
-# Potential Solutions Section
-st.markdown(f"<h3 style='color:{TERTIARY_COLOR}; text-align: center;'>Potential Solutions</h3>", unsafe_allow_html=True)
-solutions = {
-    "Solution": ["AI-Powered Personalized Platform", "Engaging Visual Learning Tools", "Data-Driven Dashboards"],
-    "Pros": ["Improves engagement and learning outcomes.", "Increases student interest and retention.", "Provides transparency and improves collaboration."],
-    "Cons": ["High initial investment.", "Complex implementation.", "Data privacy concerns."]
-}
-solutions_df = pd.DataFrame(solutions)
-st.table(solutions_df)
+with col1:
+    # Why Me Section
+    st.markdown("""
+    <div class="section-card">
+        <div class="section-heading">Why Me</div>
+        <div class="achievement">
+            <div class="achievement-title">Perfect blend of Business & Tech</div>
+            <div class="achievement-detail">
+                Led cross-functional teams of 10+ specialists in product development with 
+                experience managing stakeholders across UI/UX, development, and engineering teams.
+            </div>
+        </div>
+        <div class="achievement">
+            <div class="achievement-title">Experience in Supply & Onboarding</div>
+            <div class="achievement-detail">
+                Built onboarding pipelines that improved efficiency by 50% and conducted 
+                market analysis driving 65% sales growth at Dr. Oetker India.
+            </div>
+        </div>
+        <div class="achievement">
+            <div class="achievement-title">Account Management Skills</div>
+            <div class="achievement-detail">
+                Managed product roadmaps and strategic relationships with multiple stakeholders, ensuring 
+                timely delivery of features while optimizing for user experience.
+            </div>
+        </div>
+        
+        <div class="skills-title">Key Skills:</div>
+        <div>
+            <span class="skill-tag">Stakeholder Management</span>
+            <span class="skill-tag">Supply Onboarding</span>
+            <span class="skill-tag">Key Account Management</span>
+            <span class="skill-tag">Market Analysis</span>
+            <span class="skill-tag">Data Analytics</span>
+            <span class="skill-tag">Product Strategy</span>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
 
-# Metrics and Testing Section
-st.markdown(f"<h3 style='color:{TERTIARY_COLOR}; text-align: center;'>Metrics and Testing</h3>", unsafe_allow_html=True)
-st.write("To measure the platform's success, the following metrics will be used:")
-st.markdown("- **Student Performance:** Improvement in test scores (Target: +15% within 3 months)")
-st.markdown("- **Engagement:** Daily active usage time (Target: 20 minutes per session)")
-st.markdown("- **Retention:** User retention after 3 months (Target: 80%)")
-st.markdown("- **Teacher/Parent Satisfaction:** Feedback score (Target: 4.5+/5)")
+with col2:
+    # Tech Meets Fashion Section
+    st.markdown("""
+    <div class="section-card">
+        <div class="section-heading">Tech Meets Fashion</div>
+        <div class="achievement">
+            <div class="achievement-title">AI-Powered Personalization</div>
+            <div class="achievement-detail">
+                Developed smart recommendation systems that improved user engagement by 40%, 
+                applicable to personalized fashion discovery.
+            </div>
+        </div>
+        <div class="achievement">
+            <div class="achievement-title">Visual Analysis & Recognition</div>
+            <div class="achievement-detail">
+                Built image classification systems with 80% accuracy that could enhance 
+                fashion cataloging and trend analysis.
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
 
-# Product Roadmap Section
-st.markdown(f"<h3 style='color:{TERTIARY_COLOR}; text-align: center;'>Product Roadmap</h3>", unsafe_allow_html=True)
-st.markdown("### Phase 1: MVP Development (Month 1-3)")
-st.write("Build adaptive learning features, teacher dashboards, and initial gamification.")
+    # Resume & Contact Section
+    st.markdown("""
+    <div class="section-card" style="text-align: center;">
+        <div class="section-heading" style="text-align: center;">Let's Connect</div>
+        <a href="mailto:kashishbhasinn@gmail.com" class="btn-download">Download CV</a>
+        <a href="https://linkedin.com/in/kashish-bhasin" class="btn-contact">Let's Talk</a>
+        <p style="margin-top: 15px; font-size: 0.9rem; color: #000000;">
+            <b>+91 9811149303</b> | kashishbhasinn@gmail.com
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
 
-st.markdown("### Phase 2: Advanced Features (Month 4-6)")
-st.write("Add AI recommendation engines, gamification with AR/VR, and beta testing in pilot schools.")
-
-st.markdown("### Phase 3: Scale and Optimize (Month 7-12)")
-st.write("Expand to more schools, enhance analytics, and improve scalability.")
-
-# Launch Plan Section
-st.markdown(f"<h3 style='color:{TERTIARY_COLOR}; text-align: center;'>Launch Plan</h3>", unsafe_allow_html=True)
-st.markdown("### Pre-Launch (Month 1-6)")
-st.write("Conduct user research, build marketing campaigns, and prepare onboarding materials.")
-
-st.markdown("### During Launch (Month 7-8)")
-st.write("Host demo sessions for pilot schools, provide 24/7 support, and run social media campaigns.")
-
-st.markdown("### Post-Launch (Month 9-12)")
-st.write("Analyze pilot data, expand user base, and roll out advanced AR/VR modules.")
-
-# Visualization Example
-st.header("Visualization: Top 10 Cryptocurrencies")
-data = {
-    "Cryptocurrency": ["Bitcoin", "Ethereum", "Tether", "BNB", "XRP", "Cardano", "Solana", "Dogecoin", "Polygon", "Litecoin"],
-    "Market Cap (in Billion $)": [900, 450, 83, 65, 60, 45, 40, 20, 18, 10]
-}
-df_crypto = pd.DataFrame(data)
-st.bar_chart(df_crypto.set_index("Cryptocurrency"))
-
-# Long-Term Evolution Section
-st.markdown(f"<h3 style='color:{TERTIARY_COLOR}; text-align: center;'>Long-Term Evolution</h3>", unsafe_allow_html=True)
-st.write("In the long term, the platform will evolve by enhancing AI models for predictive analytics, expanding globally with curriculum customization, and integrating with the broader EdTech ecosystem.")
-
-# Footer
-st.markdown(f"<h4 style='color:{SECONDARY_COLOR};'>© 2025 by Kashish Bhasin</h4>", unsafe_allow_html=True)
+# Call to Action Footer
+st.markdown("""
+<div class="cta-footer">
+    Ready to stitch data with design. Let's build fashion @ District by Zomato.
+</div>
+""", unsafe_allow_html=True)

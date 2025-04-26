@@ -159,7 +159,8 @@ with col1:
         </div>
         
         <div class="skills-section">
-            <div class="skills-heading">Key Skills:</div>
+        <div class="skills-heading">Key Skills:</div>
+        <div>
             <span class="skill-tag">Stakeholder Management</span>
             <span class="skill-tag">Supply Onboarding</span>
             <span class="skill-tag">Key Account Management</span>
@@ -167,6 +168,8 @@ with col1:
             <span class="skill-tag">Data Analytics</span>
             <span class="skill-tag">Product Strategy</span>
         </div>
+</div>
+
     </div>
     """, unsafe_allow_html=True)
 

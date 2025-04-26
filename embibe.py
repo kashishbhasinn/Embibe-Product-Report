@@ -75,13 +75,6 @@ st.markdown("""
         opacity: 0.85;
         margin-top: 5px;
     }
-    h3 {
-        color: #000000;
-        border-bottom: 2px solid #f2f2f2;
-        padding-bottom: 8px;
-        margin-bottom: 15px;
-        font-weight: 600;
-    }
     .section-heading {
         color: #000000;
         font-size: 1.5rem;
@@ -101,11 +94,14 @@ st.markdown("""
         font-size: 0.85rem;
         font-weight: 500;
     }
-    .skills-title {
+    .skills-section {
         margin-top: 20px;
-        margin-bottom: 10px;
+    }
+    .skills-heading {
         font-weight: 600;
         color: #000000;
+        font-size: 1.1rem;
+        margin-bottom: 10px;
     }
     .achievement {
         border-left: 3px solid #E23744;
@@ -162,8 +158,8 @@ with col1:
             </div>
         </div>
         
-        <div class="skills-title">Key Skills:</div>
-        <div>
+        <div class="skills-section">
+            <div class="skills-heading">Key Skills:</div>
             <span class="skill-tag">Stakeholder Management</span>
             <span class="skill-tag">Supply Onboarding</span>
             <span class="skill-tag">Key Account Management</span>

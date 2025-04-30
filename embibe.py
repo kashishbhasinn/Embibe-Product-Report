@@ -19,7 +19,7 @@ def apply_custom_css():
     
     /* Sidebar */
     section[data-testid="stSidebar"] {
-        background-color: #FCD34D;
+        background-color: #FFE4E6;
         padding: 1rem;
     }
     

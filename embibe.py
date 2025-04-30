@@ -14,7 +14,7 @@ def apply_custom_css():
     <style>
     /* Main background */
     .stApp {
-        background-color: #FFF9F0;
+        background-color: #F472B6;
     }
     
     /* Sidebar */
